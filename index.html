@@ -9,6 +9,17 @@
 
     // TODO: Add the logic to handle the form submission and set the action URL
     let selectedEngine = document.querySelector('input[name=engine]:checked');
+    let searchInput = document.querySelector('input[name=q]');
+    let errorMessage = document.getElementById("error-message");
+    if (!selectedEngine) {
+      errorMessage.textContent = "Please select a search engine.";
+      return;
+    }
+
+    if (searchInput.value.trim() === "") {
+      errorMessage.textContent = "Please enter a search term.";
+      return;
+    }
 
 // Get the value of the selected radio button
 let engine = selectedEngine.value;
@@ -112,4 +123,4 @@ let searchForm = document.getElementById("search-form");
       margin-top: 5px;
     }
   </style>
-  
+  </html>
